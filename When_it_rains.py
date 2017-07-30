@@ -1,6 +1,7 @@
 from collections import defaultdict
 from itertools import islice
 
+# ANSWERING A QUESTION FROM THE GOOGLE FOOBAR CODING CHALLENGE 
 #Visualizing the problem as a vertical Bar Graph, vertical bars are connected "peak to peak"/
 #This forms horizontal rectangles between the peaks, in which area can be calculated
 def answer(LoN):
