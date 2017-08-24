@@ -3,7 +3,7 @@ import heapq
 from collections import namedtuple
 
 # Worse implementation
-# O(n) to re-heapify on element pop(), plus O(2n) space complexity
+# O(n) to re-heapify on element pop()
 class MinStack:
 
     def __init__(self):
