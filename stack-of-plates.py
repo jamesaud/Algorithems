@@ -17,7 +17,8 @@ class StackOfPlates:
 
     def __init__(self, max_stack_elements):
         self.stacks = [[]]  # List of stacks, where the last element is the most recent stack
-        self.top_stack = self.stacks[0]  # The current stack being added to
+        self.top_stack = self.stacks[0]   # The current stack being added to
+        # Alternatively, could do make top_stack a property over lambda: self.stacks[0] so we wouldn't have to remember to always set the top stack
         self.max = max_stack_elements   # The max elements one stack can contain
 
 
@@ -40,6 +41,8 @@ class StackOfPlates:
         self.stacks.append([])
         self.top_stack = self.stacks[-1]
 
+
+
     def pop_at(self, index):
         stack_index = (index - 1) // self.max
         elem_index_in_stack = index % self.max
@@ -52,7 +55,10 @@ class StackOfPlates:
             stack = self.stacks[stack_index]
             next = self.stacks[stack_index + 1]
             stack.append(next.pop(0))
-            if not next: del self.stacks[-1]
+            if not next:
+                del self.stacks[-1]
+                self.top_stack = self.stacks[-1]
+
             stack_index += 1
 
 
@@ -73,8 +79,8 @@ m.push(5)
 m.push(6)
 m.push(7)
 
-print(m.stacks)
 
+print(m.stacks)
 m.pop_at(3)
 
 print(m.stacks)
