@@ -1,4 +1,4 @@
-
+# Sort a stack, using only stacks. No lists or other data structures allowed.
 
 def sort_stack(stack):
     if not stack: return stack
